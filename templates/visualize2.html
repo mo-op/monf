@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>CITIES</title>
+    </head>
+    <body>
+        <h2 style = "text-align: center;">Visuals:</h2>
+ 		<div>
+            <form action = "" method = post>
+                <fieldset>
+                   <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+                        {{form.latitude.label}} <br> 
+                        {{form.latitude}} <br>
+                         {{form.longitude.label}} <br> 
+                        {{form.longitude}} <br>
+                   </div>
+                   {{form.submit}}
+                </fieldset>
+            </form>
+        </div>
+        <div class="map">
+            {% if map%}
+            {% include map %}
+           {% endif %}  
+           {% if error %}
+           {{error}}
+           {% endif %}
+        </div>
+    </body>
+</html>
+

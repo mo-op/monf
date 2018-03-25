@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>CITIES</title>
+    </head>
+    <body>
+    	<h1>Hello.</h1>
+        <h2>Welcome to the cities population management application!!</h2>
+        <h3>Here are the details you've asked for .</h3>
+    </div>
+    <div class="results">
+        {% if city %}
+            {{city}}
+            <table>
+                <tr class="data">
+                    <td class="name">{{ city["name"] }}</td>
+                    <td class="desc">{{ city["population"] }}</td>
+                </tr>
+            {% else %}
+                <h4>No Result Found !!</h4>
+            {% endif %}
+        </table>
+
+    </div>
+    <a href="/queries"> Return to list </a>
+    </body>
+</html>

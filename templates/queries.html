@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>CITIES</title>
+    </head>
+    <body>
+    	<h1>Hello.</h1>
+        <h2>Welcome to the cities population management application!!</h2>
+        <h3>Please refine results using the filters below.</h3>
+      <!--    <div class="filters">
+            <form action="" method="post">
+                <input type="text" placeholder="Country" name="country" value="{{
+          request.form.country }}">
+          <input type="radio" placeholder="SortDescending" name="SortD" value="{{
+          request.form.order}}">Sort (Desc)<br>
+                <input class="btn btn-default" type="submit" value="Search">
+            </form>
+    </div> -->
+    <div class="filters">
+<h2 style = "text-align: center;">Query:</h2>
+      
+      <form action = "" method = post>
+         <fieldset>            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.country.label }}<br>
+               {{ form.country }}
+               <br>
+               
+               {{ form.sort.label }} {{ form.sort }}
+
+               {{ form.continent.label }}<br>
+               {{ form.continent }}
+               <br>
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+</div>
+    <div class="results">
+
+        <h1>{{h}}</h1>
+            <hr>
+            {% if citiesData[0] %}
+            <h3>List : Cities</h3>
+            <table>
+                <tr id="row">
+                    <td class="name">City</td>
+                    <td class="pop">Population</td>
+                </tr>
+                {% for city in citiesData %}
+                <tr class="data">
+                    <td class="name">{{ city["name"] }}</td>
+                    <td class="desc">{{ city["population"] }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <h4>No Result Found !!</h4>
+            {% endif %}
+        </table>
+
+    </div>
+    </body>
+</html>

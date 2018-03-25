@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>CITIES</title>
+    </head>
+    <body>
+        <h2 style = "text-align: center;">Visuals:</h2>
+ 		<div>
+            <form action = "" method = post>
+                <fieldset>
+                   <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+                        {{form.choice.label}} <br> 
+                        {{form.choice}}
+                   </div>
+                   {{form.submit}}
+                </fieldset>
+            </form>
+        </div>
+        <div class="map">
+            {% if map%}
+            {% include map %}
+           {% endif %}
+            {% if data%}
+            {{ data}}
+           {% endif %}
+           {% if img %}
+            <img src={{img}}/>
+           {% endif %}
+        </div>
+
+    </body>
+</html>
+
